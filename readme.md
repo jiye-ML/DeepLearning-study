@@ -1,5 +1,9 @@
 ### 卷积网络系统学习
 
+* [visualization.md](visualization.md)
+    * 神经网络可视化工作
+* [deconv.md](deconv.md)
+    * 反卷积学习
 
 
 ### reference 
