@@ -1,9 +1,15 @@
 ### 卷积网络系统学习
 
-* [visualization.md](visualization.md)
+
+* [visualization.md](09.visualization.md)
     * 神经网络可视化工作
-* [deconv.md](deconv.md)
+* [deconv.md](07.反卷积.md)
     * 反卷积学习
+* [反向传播](06.反向传播.md)
+* [反卷积](07.反卷积.md)
+* [激活函数](08.激活函数.md)
+
+
 
 
 ### reference 
