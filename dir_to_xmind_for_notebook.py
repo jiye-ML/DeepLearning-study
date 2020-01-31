@@ -1,6 +1,18 @@
 """
 将目录的内容转化为思维导图，
 
+将 10.00_00_aa.md
+  10.00_01_bb.md
+  10.00_02_cc.md
+
+
+形式的目录结构转化为
+
+10_aa --> 10.00_00.aa.md  --> 10.00_01_bb.md
+                          --> 10.00_02_cc.md
+
+
+
 """
 
 import xmind
@@ -47,13 +59,22 @@ for i, _key in enumerate(file_name_list.keys()):
 
   print(i, _key)
 
+  # 10_aa
   _father_node = r1.addSubTopic()
   _father_node.setTitle(_key)
 
+  # 10.00_00_aa.md
+  _cur_father_node = None
   for i2, val2 in enumerate(file_name_list[_key]):
 
-    _child_node = _father_node.addSubTopic()
-    _child_node.setTitle(val2)
-    _child_node.setFileHyperlink('{}/{}'.format(_key, val2))
+    # 文件 10.00_00_aa.md
+    if '_00_' in val2:
+      _cur_father_node = _father_node.addSubTopic()
+      _cur_father_node.setTitle(val2)
+      _cur_father_node.setFileHyperlink('{}/{}'.format(_key, val2))
+    else:
+      _child_node = _cur_father_node.addSubTopic()
+      _child_node.setTitle(val2)
+      _child_node.setFileHyperlink('{}/{}'.format(_key, val2))
 
 xmind.save(w, "index.xmind")
