@@ -15,6 +15,7 @@ predictions = tf.random_uniform(shape=[2])
 #   2.画ROC曲线
 #   3.AUC of ROC的含义
 roc_auc, roc_auc_update_op = tf.metrics.auc(labels, predictions, curve="ROC", name="roc")
+
 # PR：横轴是recall(查全率),纵轴是precision(查准率)
 #   1.recall和precision的计算
 #   2.平衡点（BEP,recall=precision）
