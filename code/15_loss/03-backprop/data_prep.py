@@ -20,3 +20,4 @@ data, test_data = data.ix[sample], data.drop(sample)
 # Split into features and targets
 features, targets = data.drop('admit', axis=1), data['admit']
 features_test, targets_test = test_data.drop('admit', axis=1), test_data['admit']
+
